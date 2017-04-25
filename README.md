@@ -2,12 +2,13 @@
 
 ![](http://2px.com.br/deve/wp-content/uploads/2016/09/logordp.png)
 
-O brerpwsc facilita muito as requisições SOAP feitas a partir de qualquer aplicação externa java, incluindo aplicativos android. Com uma arquitetura orientada as classes de modelo, não é necessário tratar o XML de request e response na mão. Os webservices do BrERP seguem a arquitetura SOAP, e com ele podemos fazer coisas como:
+O BrERP WSC facilita muito as requisições SOAP em sua aplicação java. Com uma arquitetura model oriented, não é necessário tratar o XML de request e response na mão. Os webservices do BrERP seguem a arquitetura SOAP, e com ele podemos fazer coisas como:
 
   - CRUD em qualquer tabela do sistema
   - Trazer informações de views
   - Executar o "ação do documento" em qualquer documento do BrERP
   - Execução de processo
+  - Compatível com Android
 
 # Exemplo prático: Criando um parceiro de negócios
 
@@ -165,3 +166,7 @@ Time: 1093
 --------------------------
 ```
 
+### Consultando o BP cadastrado em um dispositivo android
+A biblioteca também é compatível para projetos nativos android. A pasta sandbox_android contem um simples aplicativo para demonstrar a funcionalidade, e você mesmo pode rodar! Não esquecer de configurar os webservices na sua base do BrERP! :)
+
+![](/documents/android-query.png)
