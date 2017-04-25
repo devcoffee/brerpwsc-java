@@ -69,11 +69,12 @@ public class MainActivity extends AppCompatActivity {
 
     public LoginRequest getLogin() {
         LoginRequest login = new LoginRequest();
-        login.setUser("SuperUser");
-        login.setPass("System");
-        login.setClientID(11);
-        login.setRoleID(102);
-        login.setOrgID(0);
+        login.setUser("superuser @ brerp.com.br");
+        login.setPass("developer");
+        login.setClientID(1000000);
+        login.setRoleID(1000000);
+        login.setWarehouseID(1000002);
+        login.setOrgID(1000001);
         return login;
     }
 
