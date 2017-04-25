@@ -1,6 +1,4 @@
-# BrERP WSC
-
-![](http://2px.com.br/deve/wp-content/uploads/2016/09/logordp.png)
+![](https://devcoffee.com.br/wp-content/uploads/2016/11/logo_brerp-300x86.png)        
 
 O BrERP WSC facilita muito as requisições SOAP em sua aplicação java. Com uma arquitetura model oriented, não é necessário tratar o XML de request e response na mão. Os webservices do BrERP seguem a arquitetura SOAP, e com ele podemos fazer coisas como:
 
@@ -10,7 +8,9 @@ O BrERP WSC facilita muito as requisições SOAP em sua aplicação java. Com um
   - Execução de processo
   - Compatível com Android
 
-# Exemplo prático: Criando um parceiro de negócios
+# Documentação
+
+## Exemplo prático: Criando um parceiro de negócios
 
 Existe uma classe chamada CreateBPartner. Como o nome sugere, ela cria um parceiro de negócios no BrERP via webservice. Basta que você troque as informações do seu servidor/login e que configure os webservices no sistema. Abaixo, segue abaixo as configurações feitas na base de desenvolvimento, basta adaptar para sua empresa:
 
@@ -170,3 +170,5 @@ Time: 1093
 A biblioteca também é compatível para projetos nativos android. A pasta sandbox_android contem um simples aplicativo para demonstrar a funcionalidade, e você mesmo pode rodar! Não esquecer de configurar os webservices na sua base do BrERP! :)
 
 ![](/documents/android-query.png)
+
+![](http://2px.com.br/deve/wp-content/uploads/2016/09/logordp.png) 
