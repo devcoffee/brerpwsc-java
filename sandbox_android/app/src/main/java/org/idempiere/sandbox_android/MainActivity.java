@@ -59,8 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtUrl;
     private EditText txtCreateName;
     private EditText txtCreateValue;
-    private EditText txtCreateTaxID;
-    private EditText txtQueryName;
+    private EditText txtQueryValue;
     private ImageButton btnSelectLogo;
     private byte[] byteImgCreate;
     private byte[] byteImgQuery;
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public LoginRequest getLogin() {
         LoginRequest login = new LoginRequest();
         login.setUser("superuser @ brerp.com.br");
-        login.setPass("developer");
+        login.setPass("666");
         login.setClientID(1000000);
         login.setRoleID(1000000);
         login.setWarehouseID(1000002);
@@ -106,12 +105,12 @@ public class MainActivity extends AppCompatActivity {
         tabHost.setup();
 
         TabSpec tabCreateBPartner = tabHost.newTabSpec("tabCreateBPartner");
-        tabCreateBPartner.setIndicator("Create BPartner");
+        tabCreateBPartner.setIndicator("Criar Parceiro");
         tabCreateBPartner.setContent(R.id.tabCreateBPartner);
         tabHost.addTab(tabCreateBPartner);
 
         TabSpec tabQueryBPartner = tabHost.newTabSpec("tabQueryBPartner");
-        tabQueryBPartner.setIndicator("Query BPartner");
+        tabQueryBPartner.setIndicator("Consultar Parceiro");
         tabQueryBPartner.setContent(R.id.tabQueryBPartner);
         tabHost.addTab(tabQueryBPartner);
 
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         lblQueryResult = (TextView) findViewById(R.id.lblQueryResult);
         imgQueryLogo = (ImageView) findViewById(R.id.imgQueryLogo);
-        txtQueryName = (EditText) findViewById(R.id.txtQueryName);
+        txtQueryValue = (EditText) findViewById(R.id.txtQueryValue);
         txtUrl = (EditText) findViewById(R.id.txtUrl);
 
         Button btnSendQuery = (Button) findViewById(R.id.btnSendQuery);
@@ -134,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                     ws.setLimit(1);
 
                     DataRow data = new DataRow();
-                    data.addField("Name", "%" + txtQueryName.getText().toString() + "%");
+                    data.addField("Value", txtQueryValue.getText().toString());
                     ws.setDataRow(data);
 
                     WebServiceConnection client = getClient();
@@ -148,13 +147,19 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         Log.i("info", "Total rows: " + response.getNumRows());
                         temp = "";
+                        System.out.println(response.getDataSet().getRowsCount());
                         for (int i = 0; i < response.getDataSet().getRowsCount(); i++) {
                             Log.i("info", "Row: " + (i + 1));
                             for (int j = 0; j < response.getDataSet().getRow(i).getFieldsCount(); j++) {
                                 Field field = response.getDataSet().getRow(i).getFields().get(j);
-                                Log.i("info", "Column: " + field.getColumn() + " = " + field.getValue());
-                                temp += field.getColumn() + " = " + field.getValue() + "\n";
-
+                                if (field.getColumn().equals("Value")) {
+                                    Log.i("info", "Column: " + field.getColumn() + " = " + field.getValue());
+                                    temp += "Chave de Busca" + " = " + field.getValue() + "\n";
+                                }
+                                if (field.getColumn().equals("Name")) {
+                                    Log.i("info", "Column: " + field.getColumn() + " = " + field.getValue());
+                                    temp += "Nome" + " = " + field.getValue() + "\n";
+                                }
                                 if (field.getColumn().equals("Logo_ID") && !field.getValue().toString().isEmpty()) {
                                     Log.i("info", "Get Logo");
 
@@ -196,7 +201,6 @@ public class MainActivity extends AppCompatActivity {
 
         txtCreateName = (EditText) findViewById(R.id.txtCreateName);
         txtCreateValue = (EditText) findViewById(R.id.txtCreateValue);
-        txtCreateTaxID = (EditText) findViewById(R.id.txtCreateTaxID);
 
         btnSelectLogo = (ImageButton) findViewById(R.id.btnSelectLogo);
         btnSelectLogo.setOnClickListener(new View.OnClickListener() {
@@ -238,7 +242,6 @@ public class MainActivity extends AppCompatActivity {
                     DataRow dataBP = new DataRow();
                     dataBP.addField("Name", txtCreateName.getText().toString());
                     dataBP.addField("Value", txtCreateValue.getText().toString());
-                    dataBP.addField("TaxID", txtCreateTaxID.getText().toString());
                     dataBP.addField("Logo_ID", "@AD_Image.AD_Image_ID");
                     createBP.setDataRow(dataBP);
 
@@ -301,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("printSuccess", msg);
         AlertDialog.Builder dlgAlert = new AlertDialog.Builder(MainActivity.this);
         dlgAlert.setMessage(msg);
-        dlgAlert.setTitle("Success");
+        dlgAlert.setTitle("Successo");
         dlgAlert.setCancelable(true);
         dlgAlert.create().show();
     }

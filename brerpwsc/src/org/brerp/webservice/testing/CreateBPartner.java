@@ -54,7 +54,7 @@ public class CreateBPartner {
 		 * Substituir com as informações da sua base de dados
 		 */
 		login.setUser("superuser @ brerp.com.br");
-		login.setPass("developer");
+		login.setPass("666");
 		login.setClientID(1000000);
 		login.setRoleID(1000000);
 		login.setWarehouseID(1000002);
@@ -67,7 +67,7 @@ public class CreateBPartner {
 	 */
 	public static String getUrlBase() {
 		//Sbustituir com o link da sua base de dados
-		return "http://atemoia.devcoffee.com.br:5700";
+		return "https://teste.brerp.com.br";
 	}
 
 	/**
