@@ -1,6 +1,6 @@
 ![](https://devcoffee.com.br/wp-content/uploads/2016/11/logo_brerp-300x86.png)        
 
-O BrERP WSC facilita muito as requisições SOAP em sua aplicação java. Com uma arquitetura model oriented, não é necessário tratar o XML de request e response na mão. Os webservices do BrERP seguem a arquitetura SOAP, e com ele podemos fazer coisas como:
+O BrERP WSC facilita muito as requisições SOAP para os webservices do BrERP em sua aplicação java. Com uma arquitetura model oriented, não é necessário tratar o XML de request e response na mão. Com essa biblioteca podemos fazer coisas como:
 
   - CRUD em qualquer tabela do sistema
   - Trazer informações de views
@@ -12,7 +12,7 @@ O BrERP WSC facilita muito as requisições SOAP em sua aplicação java. Com um
 
 ## Exemplo prático: Criando um parceiro de negócios
 
-Existe uma classe chamada CreateBPartner. Como o nome sugere, ela cria um parceiro de negócios no BrERP via webservice. Basta que você troque as informações do seu servidor/login e que configure os webservices no sistema. Abaixo, segue abaixo as configurações feitas na base de desenvolvimento, basta adaptar para sua empresa:
+Dentro do pacote de testes deste repositório existe uma classe chamada CreateBPartner. Como o nome sugere, ela cria um parceiro de negócios no BrERP via webservice. Basta que você troque as informações do seu servidor/login e que configure os webservices no sistema. Abaixo, segue abaixo as configurações feitas na base de desenvolvimento, basta adaptar para sua empresa:
 
 ### Configurando Webservice no BrERP
 
@@ -166,13 +166,38 @@ Time: 1093
 --------------------------
 ```
 
-### Consultando o BP cadastrado em um dispositivo android
-A biblioteca também é compatível para projetos nativos android. A pasta sandbox_android contem um simples aplicativo para demonstrar a funcionalidade, e você mesmo pode rodar! Não esquecer de configurar os webservices na sua base do BrERP! :)
+### Cadastrando parceiros de negócio e Consultando em um dispositivo android
+A biblioteca também é compatível para projetos nativos android. A pasta sandbox_android contem um simples projeto no android studio para demonstrar a funcionalidade, e você mesmo pode rodar! Não esquecer de configurar os webservices na sua base do BrERP! :)
 
 ![](/documents/brerpwsc1.png)
 
 ![](/documents/brerpwsc2.png)
 
 ![](/documents/brerpwsc3.png)
+
+### Configurando os Webservices
+Para expor os dados do brerp, nenhum código precisa ser feito. Basta que sejam feitas as configurações na janela de Segurança de Serviços Web.
+
+#### Serviços de Segurança Web
+Quando dizemos que os webservices são model oriented, isso quer dizer que eles são orientados a classes de modelo, então podemos entender que são orientados a tabelas do banco de dados. É claro que é possível também expor processos, que não estão vinculados a nenhuma tabela no sistema, mas na maioria das situações será seguidos esse padrão. Vamos imaginar que iremos expor os dados da tabela de parceiro de negócios, para que seja uma consulta igual demonstrado no aplicativo da seção à cima.
+Na janela de Serviços de Segurança Web então, devemos selecionar no campo Serviço Web que se trata de um "Model Oriented Web Services". No método de serviço web, é onde selecionamos qual a operação que queremos fazer, se é uma query (fazer uma pesquisar), insert, update, delete, rodar um processo (runProcess), etc.No nosso caso, ficaremos com a opção "Query".
+No campo tabela, deve ser selecionada qual a tabela a ser exposta 
+
+#### Parâmetros de Serviço Web
+A janela parâmetros de Serviço Web, é uma aba filha do serviços de segurança web. Obrigatóriamente para o funcionamento do Web Service Type, eu precisso declarar três parâmetros:
+- TableName, que é um tipo de parâmetro constante e atribuimos o nome da tabela do banco dados no seu valor constante
+- RecordID, que é um tipo de parâmetro free, ou seja, pode ser passado qualquer valor na requisição
+- Action, que é constante e contem o nome da operação. Como vamos fazer uma Query, o valor da constant é "Query". Se fosse update, seria update.
+
+#### Entrada de Serviço Web
+É onde passamos qual informação (coluna) será levada na requisição. Será os campos filtros da query.
+
+### Resultado de Serviço Web
+São as colunas que são retornadas da operação, no nosso exemplo, as colunas que serão retornadas da query
+
+### Acesso de Serviço Web
+São os perfis que tem permissão para fazer essa requisição. Lembrando que, no BrERP, toda requisição necessita ser autenticada (Login)
+
+Segue abaixo, o print do web service configurado:
 
 ![](http://2px.com.br/deve/wp-content/uploads/2016/09/logordp.png) 
