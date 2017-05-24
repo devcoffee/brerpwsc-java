@@ -169,11 +169,7 @@ Time: 1093
 ### Cadastrando parceiros de negócio e Consultando em um dispositivo android
 A biblioteca também é compatível para projetos nativos android. A pasta sandbox_android contem um simples projeto no android studio para demonstrar a funcionalidade, e você mesmo pode rodar! Não esquecer de configurar os webservices na sua base do BrERP! :)
 
-![](/documents/brerpwsc1.png)
-
-![](/documents/brerpwsc2.png)
-
-![](/documents/brerpwsc3.png)
+![](/documents/tela_brerp.png)
 
 ### Configurando os Webservices
 Para expor os dados do brerp, nenhum código precisa ser feito. Basta que sejam feitas as configurações na janela de Segurança de Serviços Web.
@@ -199,7 +195,7 @@ São as colunas que são retornadas da operação, no nosso exemplo, as colunas 
 São os perfis que tem permissão para fazer essa requisição. Lembrando que, no BrERP, toda requisição necessita ser autenticada (Login)
 
 Segue abaixo, o print do web service configurado:
-![](/documents/QueryBPartnerTest1.png)
+![](/documents/QueryBPartnerTest1.png)Mundo do Café S/A Admin
 
 ### Tipos de Serviço Web
 Na janela Segurança de Serviços web, existe um campo chamado Serviço Web. Que podem ser CompositeInterface ou Model Oriented Web Services. Os model Oriented Web Services, são as requisições de fato, são o mesmo tipo do exempo á cima. O CompositeInterface serve apenas para agrupar multiplas requisições e enviar ao servidor tudo de uma vez. Ao fazer uma requisição do tipo CompositeInterface, tudo já está dentro de uma transação, estão não precisamos nos preocupar com isso.
