@@ -169,6 +169,10 @@ Time: 1093
 ### Consultando o BP cadastrado em um dispositivo android
 A biblioteca também é compatível para projetos nativos android. A pasta sandbox_android contem um simples aplicativo para demonstrar a funcionalidade, e você mesmo pode rodar! Não esquecer de configurar os webservices na sua base do BrERP! :)
 
-![](/documents/android-query.png)
+![](/documents/brerpwsc1.png)
+
+![](/documents/brerpwsc2.png)
+
+![](/documents/brerpwsc3.png)
 
 ![](http://2px.com.br/deve/wp-content/uploads/2016/09/logordp.png) 
