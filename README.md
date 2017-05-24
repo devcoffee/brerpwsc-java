@@ -192,12 +192,18 @@ A janela parâmetros de Serviço Web, é uma aba filha do serviços de seguranç
 #### Entrada de Serviço Web
 É onde passamos qual informação (coluna) será levada na requisição. Será os campos filtros da query.
 
-### Resultado de Serviço Web
+#### Resultado de Serviço Web
 São as colunas que são retornadas da operação, no nosso exemplo, as colunas que serão retornadas da query
 
-### Acesso de Serviço Web
+#### Acesso de Serviço Web
 São os perfis que tem permissão para fazer essa requisição. Lembrando que, no BrERP, toda requisição necessita ser autenticada (Login)
 
 Segue abaixo, o print do web service configurado:
+![](/documents/QueryBPartnerTest1.png)
+
+### Tipos de Serviço Web
+Na janela Segurança de Serviços web, existe um campo chamado Serviço Web. Que podem ser CompositeInterface ou Model Oriented Web Services. Os model Oriented Web Services, são as requisições de fato, são o mesmo tipo do exempo á cima. O CompositeInterface serve apenas para agrupar multiplas requisições e enviar ao servidor tudo de uma vez. Ao fazer uma requisição do tipo CompositeInterface, tudo já está dentro de uma transação, estão não precisamos nos preocupar com isso.
+Vamos imaginar o cenário onde além de cadastrar o parceiro de negócios, gostaria de cadastrar um endereço para ele. Basta que o cliente agrupe as duas requisições dentro de um composite e siga adiante! (Temos um exemplo parecido com parceiro de negócio + imagem usando o composite dentro do projeto android aqui do repositório)
+- O composite não precisa de parâmetros, não precisa de tabela, apenas libere o acesso de serviço Web para o perfil na aba e está pronto para uso!
 
 ![](http://2px.com.br/deve/wp-content/uploads/2016/09/logordp.png) 
