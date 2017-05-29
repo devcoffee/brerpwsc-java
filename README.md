@@ -175,7 +175,7 @@ A biblioteca também é compatível para projetos nativos android. A pasta sandb
 Para expor os dados do brerp, nenhum código precisa ser feito. Basta que sejam feitas as configurações na janela de Segurança de Serviços Web.
 
 #### Serviços de Segurança Web
-Quando dizemos que os webservices são model oriented, isso quer dizer que eles são orientados a classes de modelo, então podemos entender que são orientados a tabelas do banco de dados. É claro que é possível também expor processos, que não estão vinculados a nenhuma tabela no sistema, mas na maioria das situações será seguidos esse padrão. Vamos imaginar que iremos expor os dados da tabela de parceiro de negócios, para que seja uma consulta igual demonstrado no aplicativo da seção à cima.
+Quando dizemos que os webservices são model oriented, isso quer dizer que eles são orientados a classes de modelo, então podemos entender que são orientados a tabelas do banco de dados. É claro que é possível também expor processos, que não estão vinculados a nenhuma tabela no sistema, mas na maioria das situações será seguido esse padrão. Vamos imaginar que iremos expor os dados da tabela de parceiro de negócios, para que seja uma consulta igual a demonstrado no aplicativo da seção à cima.
 Na janela de Serviços de Segurança Web então, devemos selecionar no campo Serviço Web que se trata de um "Model Oriented Web Services". No método de serviço web, é onde selecionamos qual a operação que queremos fazer, se é uma query (fazer uma pesquisar), insert, update, delete, rodar um processo (runProcess), etc.No nosso caso, ficaremos com a opção "Query".
 No campo tabela, deve ser selecionada qual a tabela a ser exposta 
 
@@ -198,7 +198,7 @@ Segue abaixo, o print do web service configurado:
 ![](/documents/QueryBPartnerTest1.png)Mundo do Café S/A Admin
 
 ### Tipos de Serviço Web
-Na janela Segurança de Serviços web, existe um campo chamado Serviço Web. Que podem ser CompositeInterface ou Model Oriented Web Services. Os model Oriented Web Services, são as requisições de fato, são o mesmo tipo do exempo á cima. O CompositeInterface serve apenas para agrupar multiplas requisições e enviar ao servidor tudo de uma vez. Ao fazer uma requisição do tipo CompositeInterface, tudo já está dentro de uma transação, estão não precisamos nos preocupar com isso.
+Na janela Segurança de Serviços web, existe um campo chamado Serviço Web, que pode ser CompositeInterface ou Model Oriented Web Services. Os model Oriented Web Services, são as requisições de fato, são o mesmo tipo do exempo à cima. O CompositeInterface serve apenas para agrupar multiplas requisições e enviar ao servidor tudo de uma vez. Ao fazer uma requisição do tipo CompositeInterface, tudo já está dentro de uma transação, estão não precisamos nos preocupar com isso.
 Vamos imaginar o cenário onde além de cadastrar o parceiro de negócios, gostaria de cadastrar um endereço para ele. Basta que o cliente agrupe as duas requisições dentro de um composite e siga adiante! (Temos um exemplo parecido com parceiro de negócio + imagem usando o composite dentro do projeto android aqui do repositório)
 - O composite não precisa de parâmetros, não precisa de tabela, apenas libere o acesso de serviço Web para o perfil na aba e está pronto para uso!
 
