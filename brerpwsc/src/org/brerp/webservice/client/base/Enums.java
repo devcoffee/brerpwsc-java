@@ -808,4 +808,17 @@ public class Enums {
 		 */
 		zh_TW
 	}
+	
+	/**
+	 * error types on the response
+	 *  
+	 * @author anutnesleo
+	 *
+	 */
+	public enum ErrorType {
+		RECORD_NOT_EXISTS,
+		SERVICE_TYPE_NOT_EXISTS,
+		UNKNOW_ERROR,
+		EMPTY_ERROR
+	}
 }

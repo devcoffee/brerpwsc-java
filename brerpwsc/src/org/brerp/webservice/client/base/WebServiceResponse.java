@@ -19,6 +19,8 @@
 
 package org.brerp.webservice.client.base;
 
+import org.brerp.logic.WebServiceResponseLogic;
+import org.brerp.webservice.client.base.Enums.ErrorType;
 import org.brerp.webservice.client.base.Enums.WebServiceResponseModel;
 import org.brerp.webservice.client.base.Enums.WebServiceResponseStatus;
 
@@ -94,5 +96,9 @@ public abstract class WebServiceResponse {
 	public void setWebServiceType(String webServiceType) {
 		this.webServiceType = webServiceType;
 	}
-
+	
+	public ErrorType getErrorType() {
+		return WebServiceResponseLogic.geErrorType(getErrorMessage());
+	}
+	
 }

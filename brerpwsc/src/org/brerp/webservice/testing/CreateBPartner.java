@@ -44,21 +44,17 @@ import org.brerp.webservice.client.response.StandardResponse;
  */
 public class CreateBPartner {
 
-	/**
-	 * Seta os parâmetros para login (autenticação)
-	 * @return
-	 */
 	public static LoginRequest getLogin() {
 		LoginRequest login = new LoginRequest();
 		/**
 		 * Substituir com as informações da sua base de dados
 		 */
 		login.setUser("superuser @ brerp.com.br");
-		login.setPass("666");
+		login.setPass("developer");
 		login.setClientID(1000000);
 		login.setRoleID(1000000);
-		login.setWarehouseID(1000002);
-		login.setOrgID(1000001);
+		login.setWarehouseID(5000025);
+		login.setOrgID(5000000);
 		return login;
 	}
 
@@ -67,7 +63,7 @@ public class CreateBPartner {
 	 */
 	public static String getUrlBase() {
 		//Sbustituir com o link da sua base de dados
-		return "https://teste.brerp.com.br";
+		return "http://dev06.devcoffee.com.br";
 	}
 
 	/**
@@ -80,7 +76,7 @@ public class CreateBPartner {
 		client.setTimeout(5000);
 		client.setAttemptsTimeout(5000);
 		client.setUrl(getUrlBase());
-		client.setAppName("Atualizando parceiro de negócio");
+		client.setAppName("Atualizando etapa da agenda");
 		return client;
 	}
 
@@ -117,6 +113,7 @@ public class CreateBPartner {
 			// Verifica se ocorreu algum erro ao executar a operação e exibe o erro
 			if (response.getStatus() == WebServiceResponseStatus.Error) {
 				System.out.println(response.getErrorMessage());
+				System.out.println(response.getErrorType());
 			} 
 			
 			System.out.println("--------------------------");
