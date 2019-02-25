@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.devcoffee</groupId>
     <artifactId>brerpwsc</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.3-SNAPSHOT</version>
     <name>brerpwsc</name>
     <description>Biblioteca Java para facilitar as requisições SOAP no BrERP</description>
     <url>https://www.github.com/devcoffee.com/brerpwsc-java</url>
