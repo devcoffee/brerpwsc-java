@@ -155,3 +155,15 @@ local.properties
 
 #Android Studio put this in the sample .gitignore file
 .DS_Store
+
+#Maven Release
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
