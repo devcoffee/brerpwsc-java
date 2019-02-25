@@ -129,7 +129,7 @@ public class Enums {
 		ReActivate("RE"),
 
 		/**
-		 * <None> = --
+		 * None = --
 		 */
 		None("--"),
 

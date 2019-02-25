@@ -46,6 +46,7 @@ public class ResponseFactory {
 	 *            Xml response
 	 * @return Response model
 	 * @throws ResponseFactoryException
+	 * 								ResponseFactoryException
 	 */
 	public static WebServiceResponse createResponse(WebServiceResponseModel responseModel, Document responseXml) throws ResponseFactoryException {
 		if (responseModel == WebServiceResponseModel.CompositeResponse)
@@ -85,6 +86,7 @@ public class ResponseFactory {
 	 *            Xml response
 	 * @return Response model
 	 * @throws ResponseFactoryException
+	 * 							ResponseFactoryException
 	 */
 	public static CompositeResponse createCompositeResponse(Document response) throws ResponseFactoryException {
 		try {
@@ -140,6 +142,7 @@ public class ResponseFactory {
 	 *            Xml response
 	 * @return Response model
 	 * @throws ResponseFactoryException
+	 * 						ResponseFactoryException
 	 */
 	public static RunProcessResponse createRunProcessResponse(Document response) throws ResponseFactoryException {
 		try {
@@ -181,6 +184,7 @@ public class ResponseFactory {
 	 *            Xml response
 	 * @return Response model
 	 * @throws ResponseFactoryException
+	 * 					ResponseFactoryException
 	 */
 	public static StandardResponse createStandardResponse(Document response) throws ResponseFactoryException {
 		try {
@@ -242,6 +246,7 @@ public class ResponseFactory {
 	 *            Xml response
 	 * @return Response model
 	 * @throws ResponseFactoryException
+	 * 					ResponseFactoryException
 	 */
 	public static WindowTabDataResponse createWindowTabDataResponse(Document response) throws ResponseFactoryException {
 		try {

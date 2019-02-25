@@ -45,6 +45,7 @@ public class Field {
 	 * Constructor column
 	 * 
 	 * @param column
+	 * 				The Name of the column
 	 */
 	public Field(String column) {
 		this.column = column;
@@ -54,7 +55,9 @@ public class Field {
 	 * Constructor column and value
 	 * 
 	 * @param value
+	 * 				The Value of The Column
 	 * @param column
+	 * 				The Column name
 	 */
 	public Field(String column, Object value) {
 		this(column);

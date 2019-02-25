@@ -53,8 +53,10 @@ public class XMLUtil {
 	 * @param document
 	 *            XML Document
 	 * @param indent
+ * 				Boolean indicating if the String must be indented or not
 	 * @return XML Document String
 	 * @throws XMLToStringException
+	 * 			XMLToStringException
 	 */
 	public static String xmlToString(Document document, boolean indent) throws XMLToStringException {
 		String xmlToString = "";
@@ -75,6 +77,7 @@ public class XMLUtil {
 	 *            XML Document
 	 * @return XML Document String
 	 * @throws XMLToStringException
+	 * 				XMLToStringException
 	 */
 	public static String xmlToString(Document document) throws XMLToStringException {
 		return xmlToString(document, true);
@@ -87,6 +90,7 @@ public class XMLUtil {
 	 *            String to convert
 	 * @return Document
 	 * @throws XMLParseException
+	 * 				XMLParseException
 	 */
 	public static Document stringToXml(String stringDocument) throws XMLParseException {
 		Document doc = null;
@@ -108,6 +112,7 @@ public class XMLUtil {
 	 * @param out
 	 *            Stream
 	 * @throws XMLWriteException
+	 * 			XMLWriteException
 	 */
 	public static void writeXml(Document document, OutputStream out) throws XMLWriteException {
 		writeXml(document, out, true);
@@ -121,7 +126,9 @@ public class XMLUtil {
 	 * @param out
 	 *            Stream
 	 * @param indent
+	 * 			Boolean indicating if the String must be indented or not
 	 * @throws XMLWriteException
+	 * 				XMLWriteException
 	 */
 	public static void writeXml(Document document, OutputStream out, boolean indent) throws XMLWriteException {
 		try {
@@ -147,6 +154,7 @@ public class XMLUtil {
 	 * @return A new Document
 	 * @throws XMLDocumentException
 	 * @throws ParserConfigurationException
+	 * 				ParserConfigurationException
 	 */
 	public static Document newDocument() throws XMLDocumentException {
 		try {

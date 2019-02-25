@@ -117,7 +117,9 @@ public class WebServiceConnection {
 	 * @param out
 	 *            Output Stream
 	 * @throws XMLWriteException
+	 * 				XMLWriteException
 	 * @throws XMLStreamException
+	 * 				XMLStreamException
 	 */
 	public void writeRequest(OutputStream out) throws XMLWriteException {
 		XMLUtil.writeXml(xmlRequest, out);
@@ -129,6 +131,7 @@ public class WebServiceConnection {
 	 * @param fileName
 	 *            File to save
 	 * @throws XMLStreamException
+	 * 				XMLStreamException
 	 */
 	public void writeRequest(String fileName) throws XMLWriteException {
 		try {
@@ -144,6 +147,7 @@ public class WebServiceConnection {
 	 * @param out
 	 *            Output Stream
 	 * @throws XMLStreamException
+	 * 			XMLStreamException
 	 */
 	public void writeResponse(OutputStream out) throws XMLWriteException {
 		XMLUtil.writeXml(xmlResponse, out);
@@ -155,6 +159,7 @@ public class WebServiceConnection {
 	 * @param fileName
 	 *            File to save
 	 * @throws XMLStreamException
+	 * 			XMLStreamException
 	 */
 	public void writeResponse(String fileName) throws XMLWriteException {
 		try {
@@ -170,7 +175,15 @@ public class WebServiceConnection {
 	 * @return Full user agent name
 	 */
 	public final String getUserAgent() {
-		return String.format("%s (%s/%s/%s/%s %s %s) %s", ComponentInfo.NAME, ComponentInfo.COMPONENT_NAME, ComponentInfo.VERSION, "Java", System.getProperty("os.name"), System.getProperty("os.version"), System.getProperty("os.arch"), getAppName()).trim();
+		return String.format("%s (%s/%s/%s/%s %s %s) %s", 
+				ComponentInfo.NAME, 
+				ComponentInfo.COMPONENT_NAME, 
+				ComponentInfo.VERSION, 
+				"Java", 
+				System.getProperty("os.name"), 
+				System.getProperty("os.version"), 
+				System.getProperty("os.arch"), 
+				getAppName()).trim();
 	}
 
 	/**
@@ -405,6 +418,8 @@ public class WebServiceConnection {
 	 * 
 	 * @param dataRequest
 	 *            Data request
+	 * @throws WebServiceException
+	 * 				WebServiceException
 	 * @return Response in XML format
 	 */
 	public Document sendRequest(String dataRequest) throws WebServiceException {
@@ -498,7 +513,8 @@ public class WebServiceConnection {
 	 * @param dataRequest
 	 *            XML Data request
 	 * @return Response in XML format
-	 * @throws Exception
+	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public Document sendRequest(Document dataRequest) throws WebServiceException {
 		Document document = null;
@@ -519,6 +535,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public WebServiceResponse sendRequest(WebServiceRequest request) throws WebServiceException {
 		this.request = request;
@@ -567,6 +584,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public CompositeResponse sendRequest(CompositeOperationRequest request) throws WebServiceException {
 		return (CompositeResponse) sendRequest((WebServiceRequest) request);
@@ -579,6 +597,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public RunProcessResponse sendRequest(RunProcessRequest request) throws WebServiceException {
 		return (RunProcessResponse) sendRequest((WebServiceRequest) request);
@@ -591,6 +610,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 				WebServiceException
 	 */
 	public WindowTabDataResponse sendRequest(ReadDataRequest request) throws WebServiceException {
 		return (WindowTabDataResponse) sendRequest((WebServiceRequest) request);
@@ -603,6 +623,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public WindowTabDataResponse sendRequest(QueryDataRequest request) throws WebServiceException {
 		return (WindowTabDataResponse) sendRequest((WebServiceRequest) request);
@@ -615,6 +636,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public WindowTabDataResponse sendRequest(GetListRequest request) throws WebServiceException {
 		return (WindowTabDataResponse) sendRequest((WebServiceRequest) request);
@@ -627,6 +649,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public StandardResponse sendRequest(DeleteDataRequest request) throws WebServiceException {
 		return (StandardResponse) sendRequest((WebServiceRequest) request);
@@ -639,6 +662,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public StandardResponse sendRequest(CreateDataRequest request) throws WebServiceException {
 		return (StandardResponse) sendRequest((WebServiceRequest) request);
@@ -651,6 +675,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public StandardResponse sendRequest(CreateUpdateDataRequest request) throws WebServiceException {
 		return (StandardResponse) sendRequest((WebServiceRequest) request);
@@ -663,6 +688,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+	 * 			WebServiceException
 	 */
 	public StandardResponse sendRequest(UpdateDataRequest request) throws WebServiceException {
 		return (StandardResponse) sendRequest((WebServiceRequest) request);
@@ -675,6 +701,7 @@ public class WebServiceConnection {
 	 *            Request to send
 	 * @return Response model
 	 * @throws WebServiceException
+ * 				WebServiceException
 	 */
 	public StandardResponse sendRequest(SetDocActionRequest request) throws WebServiceException {
 		return (StandardResponse) sendRequest((WebServiceRequest) request);

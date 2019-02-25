@@ -108,6 +108,7 @@ public class RequestFactory {
 	 *            Web service model
 	 * @return Full document for request
 	 * @throws RequestFactoryException
+	 * 			RequestFactoryException
 	 */
 	public static Document createRequest(WebServiceRequest webService) throws RequestFactoryException {
 		return buildXmlDocument(webService);

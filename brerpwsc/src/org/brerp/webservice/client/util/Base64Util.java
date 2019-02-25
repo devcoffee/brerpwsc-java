@@ -27,6 +27,7 @@ public class Base64Util {
 	 * Copyright Wikipedia. This implementation is designed to illustrate the mechanics of Base64 encoding and decoding, not necessarily for memory or time efficiency. https://en.wikipedia.org/wiki/Base64
 	 * 
 	 * @param input
+	 * 			The encoded base64 object
 	 * @return Decode
 	 */
 	public static byte[] decode(String input) {

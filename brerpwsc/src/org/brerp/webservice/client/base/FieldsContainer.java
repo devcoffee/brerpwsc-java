@@ -53,6 +53,7 @@ public abstract class FieldsContainer {
 	 * Removes the field
 	 * 
 	 * @param field
+	 * 				The Field to be removed
 	 */
 	public void removeField(Field field) {
 		fields.remove(field);
