@@ -118,8 +118,6 @@ public class WebServiceConnection {
 	 *            Output Stream
 	 * @throws XMLWriteException
 	 * 				XMLWriteException
-	 * @throws XMLStreamException
-	 * 				XMLStreamException
 	 */
 	public void writeRequest(OutputStream out) throws XMLWriteException {
 		XMLUtil.writeXml(xmlRequest, out);
