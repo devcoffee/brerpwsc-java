@@ -153,8 +153,7 @@ public class XMLUtil {
 	 * 
 	 * @return A new Document
 	 * @throws XMLDocumentException
-	 * @throws ParserConfigurationException
-	 * 				ParserConfigurationException
+	 * 				XMLDocumentException
 	 */
 	public static Document newDocument() throws XMLDocumentException {
 		try {

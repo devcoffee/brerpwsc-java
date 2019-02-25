@@ -130,8 +130,8 @@ public class WebServiceConnection {
 	 * 
 	 * @param fileName
 	 *            File to save
-	 * @throws XMLStreamException
-	 * 				XMLStreamException
+	 * @throws XMLWriteException
+	 * 				XMLWriteException
 	 */
 	public void writeRequest(String fileName) throws XMLWriteException {
 		try {
@@ -146,8 +146,8 @@ public class WebServiceConnection {
 	 * 
 	 * @param out
 	 *            Output Stream
-	 * @throws XMLStreamException
-	 * 			XMLStreamException
+	 * @throws XMLWriteException
+	 * 			XMLWriteException
 	 */
 	public void writeResponse(OutputStream out) throws XMLWriteException {
 		XMLUtil.writeXml(xmlResponse, out);
@@ -158,8 +158,8 @@ public class WebServiceConnection {
 	 * 
 	 * @param fileName
 	 *            File to save
-	 * @throws XMLStreamException
-	 * 			XMLStreamException
+	 * @throws XMLWriteException
+	 * 			XMLWriteException
 	 */
 	public void writeResponse(String fileName) throws XMLWriteException {
 		try {
@@ -199,8 +199,8 @@ public class WebServiceConnection {
 
 	/**
 	 * Sets the user agent product. The product using the lib
-	 * 
-	 * @return The user agent product
+	 * @param appName
+	 * 		The name of the App
 	 */
 	public void setAppName(String appName) {
 		this.appName = appName;
