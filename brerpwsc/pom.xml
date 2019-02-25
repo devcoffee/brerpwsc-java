@@ -33,7 +33,7 @@
         <connection>scm:git:git://github.com/devcoffee/brerpwsc-java.git</connection>
         <developerConnection>scm:git:git@github.com:devcoffee/brerpwsc-java.git</developerConnection>
         <url>https://github.com/devcoffee/brerpwsc-java/tree/master</url>
-      <tag>HEAD</tag>
+      <tag>Default</tag>
   </scm>
 
 
