@@ -1,7 +1,6 @@
 package org.brerp.webservice.testing;
 
 import org.brerp.webservice.client.base.DataRow;
-import org.brerp.webservice.client.base.Enums.ErrorType;
 import org.brerp.webservice.client.base.Enums.WebServiceResponseStatus;
 import org.brerp.webservice.client.base.LoginRequest;
 import org.brerp.webservice.client.net.WebServiceConnection;

@@ -29,7 +29,6 @@
 package org.brerp.logic;
 
 import org.brerp.webservice.client.base.Enums.ErrorType;
-import org.brerp.webservice.client.base.WebServiceResponse;
 
 /**
  * @author leo
