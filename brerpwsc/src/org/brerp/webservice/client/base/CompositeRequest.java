@@ -71,9 +71,9 @@ public abstract class CompositeRequest extends WebServiceRequest {
 	 * @param webService
 	 *            Web service
 	 * @param preCommit
-	 *            If set to <c>true</c> pre commit
+	 *            If set to true pre commit
 	 * @param postCommit
-	 *            If set to <c>true</c> post commit
+	 *            If set to true post commit
 	 */
 	public void addOperation(WebServiceRequest webService, boolean preCommit, boolean postCommit) {
 		addOperation(new Operation(webService, preCommit, postCommit));

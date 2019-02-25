@@ -1,8 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.devcoffee</groupId>
     <artifactId>brerpwsc</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>brerpwsc</name>
     <description>Biblioteca Java para facilitar as requisições SOAP no BrERP</description>
     <url>https://www.github.com/devcoffee.com/brerpwsc-java</url>
@@ -33,8 +34,7 @@
         <connection>scm:git:git://github.com/devcoffee/brerpwsc-java.git</connection>
         <developerConnection>scm:git:git@github.com:devcoffee/brerpwsc-java.git</developerConnection>
         <url>https://github.com/devcoffee/brerpwsc-java/tree/master</url>
-      <tag>HEAD</tag>
-  </scm>
+    </scm>
 
 
     <build>
@@ -104,45 +104,34 @@
 			</plugin>
         </plugins>
     </build>
-	<distributionManagement>
-	    <snapshotRepository>
-	        <id>ossrh</id>
-	        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-	    </snapshotRepository>
-	    <repository>
-	        <id>ossrh</id>
-	        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
-	        </url>
-	    </repository>
-	</distributionManagement>
-	<profiles>
-	    <!-- GPG Signature on release -->
-	    <profile>
-	        <id>release-sign-artifacts</id>
-	        <activation>
-	            <property>
-	                <name>performRelease</name>
-	                <value>true</value>
-	            </property>
-	        </activation>
-	        <build>
-	            <plugins>
-	                <plugin>
-	                    <groupId>org.apache.maven.plugins</groupId>
-	                    <artifactId>maven-gpg-plugin</artifactId>
-	                    <version>1.6</version>
-	                    <executions>
-	                        <execution>
-	                            <id>sign-artifacts</id>
-	                            <phase>verify</phase>
-	                            <goals>
-	                                <goal>sign</goal>
-	                            </goals>
-	                        </execution>
-	                    </executions>
-	                </plugin>
-	            </plugins>
-	        </build>
-	    </profile>
-	</profiles>
+<profiles>
+    <!-- GPG Signature on release -->
+    <profile>
+        <id>release-sign-artifacts</id>
+        <activation>
+            <property>
+                <name>performRelease</name>
+                <value>true</value>
+            </property>
+        </activation>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
 </project>

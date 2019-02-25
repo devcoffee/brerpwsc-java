@@ -77,7 +77,7 @@ public abstract class WebServiceRequest {
 	/**
 	 * Web Service Method
 	 * 
-	 * @returnWeb Service Method
+	 * @return Web Service Method
 	 */
 	public abstract WebServiceMethod getWebServiceMethod();
 

@@ -11,7 +11,7 @@ public class UpdateEtapa {
 
 	/**
 	 * Seta os parâmetros para login (autenticação)
-	 * @return
+	 * @return login
 	 */
 	public static LoginRequest getLogin() {
 		LoginRequest login = new LoginRequest();

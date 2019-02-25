@@ -41,7 +41,7 @@ public abstract class FieldsContainer {
 	/**
 	 * Get all field
 	 * 
-	 * @returns List fields
+	 * @return List fields
 	 */
 	public List<Field> getFields() {
 		List<Field> temp = new ArrayList<Field>();

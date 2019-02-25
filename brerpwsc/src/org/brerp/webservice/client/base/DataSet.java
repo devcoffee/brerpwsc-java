@@ -39,7 +39,7 @@ public class DataSet {
 	/**
 	 * Get all rows
 	 * 
-	 * @returns List rows
+	 * @return List rows
 	 */
 	public List<DataRow> getRows() {
 		List<DataRow> temp = new ArrayList<DataRow>();
