@@ -306,5 +306,3 @@ Na janela Segurança de Serviços web, existe um campo chamado Serviço Web, que
 Vamos imaginar o cenário onde além de cadastrar o parceiro de negócios, gostaria de cadastrar um endereço para ele. Basta que o cliente agrupe as duas requisições dentro de um composite e siga adiante! (Temos um exemplo parecido com parceiro de negócio + imagem usando o composite dentro do projeto android aqui do repositório)
 
 - O composite não precisa de parâmetros, não precisa de tabela, apenas libere o acesso de serviço Web para o perfil na aba e está pronto para uso!
-
-![logordp](http://2px.com.br/deve/wp-content/uploads/2016/09/logordp.png)
